@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../../">
+<!--seo--><title>Sasuke Mod – Split Fiction | Gamer JP Mods</title>
+<meta name="description" content="You can have access to DOWNLOAD this mod file. Change Mio to Sasukefor all outfits. Also include Mangekyo Sharingan as addon for both eyes. Default one will hav…">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Gamer JP Mods">
+<meta property="og:title" content="Sasuke Mod – Split Fiction | Gamer JP Mods">
+<meta property="og:description" content="You can have access to DOWNLOAD this mod file. Change Mio to Sasukefor all outfits. Also include Mangekyo Sharingan as addon for both eyes. Default one will hav…">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://jpthebaby.github.io/gamerjpmods/mods/sasuke-mod/">
+<meta property="og:url" content="https://jpthebaby.github.io/gamerjpmods/mods/sasuke-mod/">
+<meta property="og:image" content="https://jpthebaby.github.io/gamerjpmods/screenshots/sasuke-mod/pasted-20261127052513.jpg">
+<meta name="twitter:image" content="https://jpthebaby.github.io/gamerjpmods/screenshots/sasuke-mod/pasted-20261127052513.jpg"><!--/seo-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0d12; --panel: #141821; --line: #252b38; --text: #e8ebf2; --muted: #8b93a7;
+    --accent: #ff4d2e; --accent2: #ffb02e; --free: #2ee59d; --paid: #ffb02e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, sans-serif; }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+  header { position: sticky; top: 0; z-index: 5; background: rgba(11,13,18,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 16px; max-width: 1600px; min-height: 66px; padding-top: 10px; padding-bottom: 10px; }
+  .logo { font: 700 22px Rajdhani, sans-serif; letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+          display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+  .logo img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+  .logo span { color: var(--accent); }
+  .tools { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; justify-content: center; }
+  .tools input { flex: 1 1 240px; max-width: 420px; min-width: 0; height: 42px; background: var(--panel); border: 1px solid var(--line); color: var(--text);
+                 border-radius: 8px; padding: 0 12px; font: inherit; }
+  .tools input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .seg button { height: 40px; }
+
+  /* square brand buttons */
+  .socials { display: flex; gap: 8px; margin-left: auto; }
+  .social { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; color: #fff; text-decoration: none; font-weight: 700;
+            transition: transform .15s, filter .15s, box-shadow .15s; }
+  .social svg { width: 22px; height: 22px; fill: currentColor; }
+  .social:hover { transform: translateY(-2px); filter: brightness(1.12); box-shadow: 0 8px 20px rgba(0,0,0,.4); }
+  .social.youtube { background: #ff0000; } .social.discord { background: #5865f2; } .social.patreon { background: #ff424d; }
+  .social.nexus { background: #da8e35; } .social.kofi { background: #ff5e5b; }
+
+  /* game picker with logos */
+  .gpick { position: relative; flex: none; }
+  .gbtn { position: relative; display: flex; align-items: center; gap: 8px; width: 230px; height: 42px; padding: 0 30px 0 7px; background: var(--panel);
+          border: 1px solid var(--line); border-radius: 8px; color: var(--text); font: 600 14px Inter, sans-serif; cursor: pointer; text-align: left; }
+  .gbtn::after { content: "▾"; position: absolute; right: 11px; color: var(--muted); }
+  .gbtn:hover, .gbtn[aria-expanded="true"] { border-color: var(--accent); }
+  .gbtn span, .glist span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .glogo { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; flex: none; background: #232a3a; display: grid; place-items: center;
+           font: 700 11px Rajdhani, sans-serif; color: var(--muted); }
+  .glist { position: absolute; top: calc(100% + 6px); left: 0; z-index: 20; width: 340px; max-width: calc(100vw - 32px); max-height: min(460px, 70vh); overflow: auto;
+           background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px; box-shadow: 0 20px 50px rgba(0,0,0,.6); }
+  .glist button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 6px 8px; border: 0; border-radius: 7px; background: none; color: var(--text);
+                  font: 500 13px Inter, sans-serif; cursor: pointer; text-align: left; }
+  .glist button:hover, .glist button[aria-selected="true"] { background: #222838; }
+  .glist small { margin-left: auto; color: var(--muted); padding-left: 8px; }
+  .game-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .game-row .glogo { width: 22px; height: 22px; border-radius: 5px; font-size: 9px; }
+
+  /* list header + pages */
+  .listbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 16px; scroll-margin-top: 90px; }
+  .listbar .info { color: var(--muted); font-size: 13px; }
+  .pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; padding: 6px 0 60px; }
+  .pager button { min-width: 40px; height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel);
+                  color: var(--text); font: 600 14px Inter, sans-serif; cursor: pointer; }
+  .pager button:hover:not(:disabled) { border-color: var(--accent); }
+  .pager button.on { background: var(--accent); border-color: var(--accent); color: #111; }
+  .pager button:disabled { opacity: .35; cursor: default; }
+  .pager .gap { align-self: center; color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line);
+         background: var(--panel); color: var(--text); text-decoration: none; font-weight: 600; font-size: 13px; cursor: pointer; transition: .15s; }
+  .btn:hover { border-color: var(--accent); color: #fff; }
+  .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); border: 0; color: #111; }
+  .btn.primary:hover { filter: brightness(1.1); color: #111; }
+  .right { display: flex; align-items: center; gap: 18px; }
+  .stats { display: flex; gap: 16px; }
+  .stats div { display: flex; align-items: baseline; gap: 5px; }
+  .stats b { font: 700 20px Rajdhani, sans-serif; color: var(--accent2); }
+  .stats small { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+
+  /* round arrow buttons, shared by slideshow, mod image and fullscreen viewer */
+  .nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%;
+         border: 1px solid rgba(255,255,255,.2); background: rgba(0,0,0,.5); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; }
+  .nav:hover { background: var(--accent); border-color: var(--accent); }
+  .nav.prev { left: 14px; } .nav.next { right: 14px; }
+  .count { position: absolute; z-index: 3; right: 14px; bottom: 12px; background: rgba(0,0,0,.6); color: #fff; font-size: 12px; font-weight: 600;
+           padding: 3px 10px; border-radius: 999px; }
+
+  /* home carousel: previous | current | next */
+  .slideshow { position: relative; height: clamp(240px, 42vw, 560px); overflow: hidden; margin-bottom: 26px; background: #05060a; }
+  .glow { position: absolute; inset: -80px; background: center/cover no-repeat; filter: blur(60px) brightness(.4) saturate(1.4);
+          transition: background-image .8s; }
+  .slideshow::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 4;
+                      background: linear-gradient(to top, var(--bg) 0%, transparent 18%); }
+  .slide { position: absolute; top: 47%; left: 50%; width: 58%; aspect-ratio: 16/9; max-height: 84%; padding: 0; border: 0; border-radius: 16px;
+           background: #111 center/cover no-repeat; cursor: pointer; opacity: 0; z-index: 1; filter: brightness(.5);
+           transform: translate(-50%, -50%) scale(.5); box-shadow: 0 30px 70px rgba(0,0,0,.65);
+           transition: transform .9s cubic-bezier(.22,.8,.24,1), opacity .9s, filter .9s; }
+  .slide.center { opacity: 1; z-index: 3; filter: none; transform: translate(-50%, -50%) scale(1); outline: 1px solid rgba(255,255,255,.12); }
+  .slide.center:hover { transform: translate(-50%, -51%) scale(1.015); }
+  .slide.prev { opacity: .9; z-index: 2; transform: translate(-94%, -50%) scale(.7); }
+  .slide.next { opacity: .9; z-index: 2; transform: translate(-6%, -50%) scale(.7); }
+  .slide.prev:hover, .slide.next:hover { filter: brightness(.75); }
+  .slideshow .nav { z-index: 5; }
+  .dots { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 5; display: flex; justify-content: center; gap: 7px; }
+  .dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(255,255,255,.35); cursor: pointer; transition: .3s; }
+  .dots button[aria-current="true"] { width: 26px; background: var(--accent); }
+  @media (prefers-reduced-motion: reduce) { .slide { transition: opacity .4s, filter .4s; } }
+  @media (max-width: 560px) { .slide { width: 74%; } .slide.prev { transform: translate(-88%, -50%) scale(.6); } .slide.next { transform: translate(-12%, -50%) scale(.6); } }
+
+  .seg { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { background: var(--panel); color: var(--muted); border: 0; padding: 9px 14px; font: 600 13px Inter, sans-serif; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: #111; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; padding-bottom: 30px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column;
+          transition: transform .2s, border-color .2s, box-shadow .2s; cursor: pointer; }
+  .card:hover { transform: translateY(-4px); border-color: #3a4256; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+  .thumb { aspect-ratio: 16/9; position: relative; }
+  .ph { display: grid; place-items: center; font: 700 22px Rajdhani, sans-serif; text-transform: uppercase; color: rgba(255,255,255,.75);
+        text-align: center; padding: 12px; }
+  .badge { position: absolute; top: 10px; right: 10px; padding: 4px 10px; border-radius: 999px; font: 700 12px Inter, sans-serif;
+           text-transform: uppercase; letter-spacing: .05em; color: #111; }
+  .badge.free { background: var(--free); } .badge.paid { background: var(--paid); }
+  .body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .game { color: var(--accent); font: 700 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+  .card h3 { margin: 0; font: 700 22px/1.1 Rajdhani, sans-serif; }
+  .card h3 a { color: inherit; text-decoration: none; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tags span { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: #1d2230; color: var(--muted); }
+  .meta { color: var(--muted); font-size: 12px; margin-top: auto; padding-top: 6px; }
+  .actions { display: flex; gap: 8px; }
+  .actions .btn { flex: 1; justify-content: center; }
+  .empty { color: var(--muted); text-align: center; padding: 60px 0; grid-column: 1 / -1; }
+
+  /* mod page */
+  /* request page */
+  .reqbtn { height: 42px; flex: none; }
+  .req { max-width: 980px; padding-bottom: 70px; }
+  .req h2 { font: 700 26px Rajdhani, sans-serif; text-transform: uppercase; letter-spacing: .04em; margin: 44px 0 16px;
+            border-left: 3px solid var(--accent); padding-left: 10px; }
+  .req-hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; padding: 44px 34px; text-align: center;
+              background: radial-gradient(600px 240px at 20% 0%, rgba(255,77,46,.22), transparent 70%),
+                          radial-gradient(500px 220px at 90% 100%, rgba(88,101,242,.22), transparent 70%), var(--panel); }
+  .req-hero .eyebrow { color: var(--accent2); font: 700 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .14em; }
+  .req-hero h1 { font: 700 clamp(38px, 6vw, 60px)/1 Rajdhani, sans-serif; text-transform: uppercase; margin: 10px 0 12px; }
+  .req-hero p { color: #c3c9d6; font-size: 17px; max-width: 560px; margin: 0 auto 24px; }
+  .btn.big { padding: 14px 26px; font-size: 16px; border-radius: 10px; }
+  .req-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .req-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; transition: border-color .2s, transform .2s; }
+  .req-card:hover { border-color: #3a4256; transform: translateY(-2px); }
+  .req-card .ico { font-size: 26px; display: block; margin-bottom: 8px; }
+  .req-card b { font: 700 19px Rajdhani, sans-serif; }
+  .req-card p { color: var(--muted); margin: 6px 0 0; font-size: 14px; }
+  .req-steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .req-steps li { counter-increment: s; display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; align-items: center;
+                  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .req-steps li::before { content: counter(s); grid-row: span 2; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+                          background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #111; font: 700 18px Rajdhani, sans-serif; }
+  .req-steps span { color: var(--muted); font-size: 14px; }
+  .req-template { margin-top: 16px; border: 1px dashed #3a4256; border-radius: 12px; overflow: hidden; }
+  .tpl-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; background: var(--panel); }
+  .req-template pre { margin: 0; padding: 16px; font: 14px/1.7 Consolas, monospace; color: #c3c9d6; white-space: pre-wrap; background: #0e1118; }
+  .req-cta { margin-top: 40px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+             font: 700 24px Rajdhani, sans-serif; text-transform: uppercase; }
+  .back { display: inline-block; margin: 24px 0 18px; color: var(--muted); text-decoration: none; font-weight: 600; }
+  .back:hover { color: var(--accent); }
+  .detail { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; align-items: start; }
+  .shot { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+  .shot .thumb { height: 100%; aspect-ratio: auto; font-size: 34px; }
+  .shot .thumb.zoom { cursor: zoom-in; }
+  .slider { position: relative; margin-top: 10px; }
+  .strip { display: flex; gap: 10px; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 2px 0 6px; scrollbar-width: thin; }
+  .strip button { flex: 0 0 120px; aspect-ratio: 16/9; border-radius: 8px; border: 2px solid transparent; padding: 0; cursor: pointer;
+                  scroll-snap-align: start; opacity: .55; transition: .15s; }
+  .strip button:hover { opacity: .85; }
+  .strip button[aria-current="true"] { border-color: var(--accent); opacity: 1; }
+  .slider .nav { width: 32px; height: 32px; font-size: 18px; top: calc(50% - 3px); }
+  .slider .nav.prev { left: -6px; } .slider .nav.next { right: -6px; }
+  .side { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 12px; position: sticky; top: 80px; }
+  .side h1 { margin: 0; font: 700 34px/1.05 Rajdhani, sans-serif; }
+  .price { font: 700 30px Rajdhani, sans-serif; }
+  .price.free { color: var(--free); } .price.paid { color: var(--paid); }
+  .side dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 0; font-size: 14px; }
+  .side dt { color: var(--muted); } .side dd { margin: 0; }
+  .side .btn { justify-content: center; padding: 12px; font-size: 15px; }
+  .sections { padding: 30px 0 60px; max-width: 760px; }
+  .sections h2 { font: 700 24px Rajdhani, sans-serif; text-transform: uppercase; letter-spacing: .04em; margin: 28px 0 10px; border-left: 3px solid var(--accent); padding-left: 10px; }
+  .sections p, .sections li { color: #c3c9d6; }
+  .sections ol, .sections ul { padding-left: 22px; margin: 0; }
+  .video { aspect-ratio: 16/9; width: 100%; border: 0; border-radius: 12px; }
+  .bb { color: #c3c9d6; overflow-wrap: anywhere; }
+  .bb a { color: var(--accent2); }
+  .bb img { max-width: 100%; height: auto; border-radius: 8px; }
+  .bb ul { padding-left: 22px; margin: 8px 0; }
+  .bb blockquote { margin: 12px 0; padding: 14px 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+  .bb hr { border: 0; border-top: 1px solid var(--line); margin: 16px 0; }
+  .bb summary { cursor: pointer; color: var(--accent2); }
+
+  /* fullscreen viewer */
+  .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(5,6,9,.94); display: grid; place-items: center; }
+  .lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+  .lb-close { position: absolute; top: 16px; right: 16px; z-index: 3; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25);
+              background: rgba(0,0,0,.5); color: #fff; font-size: 22px; cursor: pointer; }
+  .lb-close:hover { background: var(--accent); border-color: var(--accent); }
+  .lightbox .count { right: 50%; transform: translateX(50%); bottom: 18px; }
+  .single .nav, .single .count { display: none; }
+
+  footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; padding: 24px 0; text-align: center; }
+  @media (max-width: 820px) { .detail { grid-template-columns: 1fr; } .side { position: static; } }
+  @media (max-width: 1150px) { .tools { order: 3; flex-basis: 100%; } .tools input { max-width: none; } }
+  @media (max-width: 560px) { .gbtn { width: 150px; } .seg button { padding: 0 10px; } .tools { gap: 6px; }
+                              .social { width: 36px; height: 36px; } .social svg { width: 18px; height: 18px; } .logo { font-size: 18px; }
+                              .nav { width: 36px; height: 36px; font-size: 20px; } }
+  @media (max-width: 700px) { header { position: static; } }  /* two-row header is too tall to pin on phones */
+  @media (max-width: 400px) { .tools { flex-wrap: wrap; } .tools input { order: 3; flex: 1 1 150px; } .reqbtn { order: 4; padding: 0 12px; }
+                              .gbtn { flex: 1; width: auto; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" id="logo"></a>
+    <div class="tools">
+      <div class="gpick" id="gpick">
+        <button type="button" class="gbtn" id="gbtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Filter by game"></button>
+        <div class="glist" id="glist" role="listbox" aria-label="Games" hidden></div>
+      </div>
+      <input id="q" type="search" placeholder="Search mods…" aria-label="Search mods">
+      <div class="seg" role="group" aria-label="Price filter">
+        <button data-p="all" aria-pressed="true">All</button>
+        <button data-p="free" aria-pressed="false">Free</button>
+        <button data-p="paid" aria-pressed="false">Premium</button>
+      </div>
+      <a class="btn primary reqbtn" href="#request">✉ Request Mods</a>
+    </div>
+    <nav class="socials" id="socials" aria-label="Social links"></nav>
+  </div>
+</header>
+
+<div id="listView" hidden>
+  <section class="slideshow" id="slides" aria-label="Slideshow"></section>
+  <main class="wrap">
+    <div class="listbar" id="listTop">
+      <div class="stats" id="stats"></div>
+      <div class="info" id="resultInfo"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <nav class="pager" id="pager" aria-label="Pages"></nav>
+  </main>
+</div>
+
+<main class="wrap" id="modView"><a class="back" href="#">← All mods</a><article><h1>Sasuke Mod</h1><p>Split Fiction mod · Premium on Patreon</p><img src="screenshots/sasuke-mod/pasted-20261127052513.jpg" alt="Sasuke Mod" style="max-width:100%;border-radius:14px"><p>You can have access to DOWNLOAD this mod file. Change Mio to Sasukefor all outfits. Also include Mangekyo Sharingan as addon for both eyes. Default one will hav…</p><p><a href="https://www.patreon.com/gamerjp/posts/sasuke-mod-split-142097520">Get on Patreon</a></p></article></main>
+
+<main class="wrap req" id="reqView" hidden>
+  <a class="back" href="#">← All mods</a>
+  <section class="req-hero">
+    <span class="eyebrow">Custom mods</span>
+    <h1>Request a Mod</h1>
+    <p>Want your favourite character, outfit or weapon in a game? Send your request on Discord and I'll make it for you.</p>
+    <a class="btn primary big" data-discord href="#" target="_blank" rel="noopener">💬 Request on Discord</a>
+  </section>
+
+  <h2>What can you request?</h2>
+  <div class="req-grid">
+    <div class="req-card"><span class="ico">🧍</span><b>Character swap</b><p>Play as any character by replacing one in the game, e.g. <em>Goku replacing Kratos</em>.</p></div>
+    <div class="req-card"><span class="ico">👕</span><b>Outfit</b><p>A new outfit or skin for a character you play.</p></div>
+    <div class="req-card"><span class="ico">⚔️</span><b>Weapon</b><p>Swap a weapon for one from another game, movie or anime.</p></div>
+    <div class="req-card"><span class="ico">🎨</span><b>Texture</b><p>New colours, materials or higher-quality textures.</p></div>
+  </div>
+
+  <h2>What to send on Discord</h2>
+  <ol class="req-steps">
+    <li><b>Game title</b><span>The exact game name, e.g. <em>God of War Ragnarok</em>.</span></li>
+    <li><b>Type of mod</b><span>Character swap, outfit, weapon or texture.</span></li>
+    <li><b>The character or item you want</b><span>e.g. <em>Sung Jinwoo</em> or <em>Mjölnir</em>.</span></li>
+    <li><b>What it should replace</b><span>The character, outfit or weapon in the game, e.g. <em>replace Kratos</em> or <em>replace the Leviathan Axe</em>.</span></li>
+    <li><b>Reference pictures or links</b><span>Screenshots, artwork or a video showing the look you want.</span></li>
+  </ol>
+
+  <div class="req-template">
+    <div class="tpl-head"><b>Copy this, fill it in and paste it on Discord</b><button type="button" class="btn" id="copyTpl">📋 Copy</button></div>
+    <pre id="tpl">Game title:
+Mod type: Character swap / Outfit / Weapon / Texture
+I want (character or item):
+It should replace:
+Reference pictures / links:
+Extra notes:</pre>
+  </div>
+
+  <h2>Good to know</h2>
+  <div class="req-grid">
+    <div class="req-card"><span class="ico">⏳</span><b>Done by priority</b><p>Requests are made in priority order. Bigger mods take longer, so you'll get an expected time when your request is confirmed.</p></div>
+    <div class="req-card"><span class="ico">💰</span><b>Price after confirmation</b><p>Every mod is different, so the price is finalised once your request is reviewed and confirmed. Nothing to pay before that.</p></div>
+    <div class="req-card"><span class="ico">✅</span><b>Not everything is possible</b><p>Some games or models can't be modded. If yours can't be done, you'll be told before anything is agreed.</p></div>
+  </div>
+
+  <div class="req-cta">
+    <b>Ready?</b>
+    <a class="btn primary big" data-discord href="#" target="_blank" rel="noopener">💬 Request on Discord</a>
+  </div>
+</main>
+
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="nav prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <img id="lbImg" alt="">
+  <button class="nav next" id="lbNext" aria-label="Next image">›</button>
+  <div class="count" id="lbCount"></div>
+</div>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>window.START_MOD = "sasuke-mod";</script>
+<script src="mods.js"></script>
+<script src="screenshots.js"></script>
+<script>
+  const $ = id => document.getElementById(id), $$ = s => [...document.querySelectorAll(s)];
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const isFree = m => String(m.price).toLowerCase() === "free";
+  const hue = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
+  const toSlug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const slug = m => toSlug(m.title);
+  const link = (cls, text, url) => { const a = el("a", cls, text); a.href = url; a.target = "_blank"; a.rel = "noopener"; return a; };
+  const navBtn = (dir, label, fn) => { const b = el("button", "nav " + dir, dir === "prev" ? "‹" : "›"); b.setAttribute("aria-label", label); b.onclick = fn; return b; };
+
+  // screenshots/<folder>/ is matched to a mod by name: "Example Character Swap" or "example-character-swap" both work
+  const SHOTS = {};
+  for (const [folder, files] of Object.entries(typeof SCREENSHOTS === "object" ? SCREENSHOTS : {})) SHOTS[toSlug(folder)] = files;
+  const pics = m => [...new Set([m.image, ...(m.gallery || []), ...(SHOTS[slug(m)] || [])].filter(Boolean))];
+  const bg = (m, src) => { const h = hue(m.title);
+    return src ? `#05060a center/cover no-repeat url("${encodeURI(src)}")`
+               : `linear-gradient(135deg, hsl(${h} 70% 30%), hsl(${(h + 50) % 360} 70% 14%))`; };
+
+  // images load only when they scroll near the screen (there can be 100+ mods)
+  const lazy = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.style.background = e.target.dataset.bg; lazy.unobserve(e.target); }
+  }), { rootMargin: "400px" });
+
+  function thumb(m, src, eager) {
+    const t = el("div", "thumb" + (src ? "" : " ph"), src ? null : m.game);
+    if (src && eager) t.style.background = bg(m, src);  // already on screen: load now
+    else if (src) { t.style.background = "#05060a"; t.dataset.bg = bg(m, src); lazy.observe(t); }
+    else t.style.background = bg(m);
+    return t;
+  }
+
+  // Nexus-style formatting ([b], [color=], [list], [url=]...) -> safe HTML. Everything is escaped first,
+  // so only the tags below can become HTML, and links/images must be http(s).
+  function bbcode(text) {
+    const dec = document.createElement("textarea");
+    dec.innerHTML = String(text).replace(/<br\s*\/?>/gi, "\n");  // decodes &nbsp; etc. as plain text, runs nothing
+    let s = dec.value.replace(/<\/?[a-z][^>]*>/gi, "").replace(/\n[\s ]*\n[\s \n]*/g, "\n\n")
+      .replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+    const ok = u => /^https?:\/\/[^\s\]]+$/i.test(u);
+    const sizes = [".8em", ".9em", "1em", "1.15em", "1.35em", "1.6em", "2em"];
+    s = s.replace(/\n*(\[\/?(?:list|\*|quote|center|right|left|spoiler|heading|line)[^\]]*\])\n*/gi, "$1")
+      .replace(/\[url\]([\s\S]*?)\[\/url\]/gi, (_, u) => ok(u) ? `<a href="${u}" target="_blank" rel="noopener">${u}</a>` : u)
+      .replace(/\[url=([^\]]*)\]/gi, (_, u) => ok(u) ? `<a href="${u}" target="_blank" rel="noopener">` : "<a>")
+      .replace(/\[img[^\]]*\]([\s\S]*?)\[\/img\]/gi, (_, u) => ok(u) ? `<img src="${u}" alt="" loading="lazy">` : "")
+      .replace(/\[youtube\]([\w-]{11})\[\/youtube\]/gi, '<a href="https://www.youtube.com/watch?v=$1" target="_blank" rel="noopener">Watch on YouTube</a>')
+      .replace(/\[color=([^\]]*)\]/gi, (_, c) => /^(#[0-9a-f]{3,8}|[a-z]+)$/i.test(c) ? `<span style="color:${c}">` : "<span>")
+      .replace(/\[size=(\d)\]/gi, (_, n) => `<span style="font-size:${sizes[Math.min(Math.max(n, 1), 7) - 1]}">`)
+      .replace(/\[font=[^\]]*\]/gi, "<span>")
+      .replace(/\[\/(color|size|font)\]/gi, "</span>")
+      .replace(/\[list(=[^\]]*)?\]/gi, "<ul>").replace(/\[\/list\]/gi, "</ul>")
+      .replace(/\[\*\]/g, "<li>").replace(/\[\/\*\]/g, "</li>")
+      .replace(/\[(center|right|left)\]/gi, '<div style="text-align:$1">').replace(/\[\/(center|right|left)\]/gi, "</div>")
+      .replace(/\[spoiler\]/gi, "<details><summary>Spoiler</summary>").replace(/\[\/spoiler\]/gi, "</details>")
+      .replace(/\[line\]/gi, "<hr>")
+      .replace(/\[(\/?)(b|i|u|s|quote|code|heading)\]/gi, (_, c, t) =>
+        `<${c}${{ b: "strong", i: "em", u: "u", s: "s", quote: "blockquote", code: "code", heading: "h3" }[t.toLowerCase()]}>`)
+      .replace(/\[\/url\]/gi, "</a>")
+      .replace(/\n/g, "<br>");
+    const d = el("div", "bb"); d.innerHTML = s;
+    return d;
+  }
+
+  // ---------- header ----------
+  document.title = SITE.name;
+  if (SITE.logo) { const img = el("img"); img.src = SITE.logo; img.alt = ""; img.onerror = () => img.remove(); $("logo").append(img); }
+  const words = SITE.name.split(" "), last = words.pop();  // last word in accent color
+  $("logo").append((words.length ? words.join(" ") + " " : ""), Object.assign(el("span"), { textContent: last }));
+  $("foot").textContent = `© ${new Date().getFullYear()} ${SITE.name}. Mods are fan-made and not affiliated with the game publishers.`;
+  const labels = { patreon: "Patreon", kofi: "Ko-fi", nexus: "Nexus Mods", youtube: "YouTube", discord: "Discord" };
+  const ICONS = {"youtube": "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z", "discord": "M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z", "patreon": "M22.957 7.21c-.004-3.064-2.391-5.576-5.191-6.482-3.478-1.125-8.064-.962-11.384.604C2.357 3.231 1.093 7.391 1.046 11.54c-.039 3.411.302 12.396 5.369 12.46 3.765.047 4.326-4.804 6.068-7.141 1.24-1.662 2.836-2.132 4.801-2.618 3.376-.836 5.678-3.501 5.673-7.031Z", "nexus": "M17.376 0c-.993 0-2.18.686-2.907 1.182-1.676-.36-4.036-.545-6.787.635-1.365-.513-2.425-.562-3.32-.488a2.16 2.16 0 0 0-1.27.429c-.33.22-2.788 2.69-3.069 4.652C-.15 7.508.68 8.932 1.218 9.718c-.44 1.76-.2 4.572.517 6.188-.353 1.041-.713 2.089-.664 3.205.01.584.061 1.188.398 1.684C1.72 21.19 4.528 24 6.545 24c.957 0 1.93-.428 3.07-1.24 2.16.383 4.402.348 6.448-.532 2.573 1.001 4.224.625 4.84.162.587-.457 2.826-2.915 3.07-4.622.1-.672-.023-1.638-1.226-3.397a10.983 10.983 0 0 0-.501-6.455c.396-1.069.673-2.188.59-3.337-.015-.68-.221-1.167-.487-1.507-.209-.335-2.415-2.39-4.028-2.91A3.105 3.105 0 0 0 17.376 0m-.03 2.082c.65.015 2.155 1.093 3.01 1.906l.355.34c-.959-.163-2.125.428-3.26 1.55a10.28 10.28 0 0 0-1.358 1.595c-.28.384-.517.768-.753 1.285l1.18.635-3.895 1.477-1.122-4.18 1.033.547c1.358-3.102 2.524-3.973 3.232-4.416h.015a5.12 5.12 0 0 1 1.49-.724zM12 3.065a8.932 8.932 0 0 1 2.22.279 7.67 7.67 0 0 0-.42.488 8.403 8.403 0 0 0-1.8-.196 8.336 8.336 0 0 0-5.897 2.432 7.86 7.86 0 0 1-.37-.433A8.905 8.905 0 0 1 12 3.065m-7.076.305c.71-.002 1.309.127 2.2.466a9.526 9.526 0 0 0-1.713 1.337c-.327-.542-.624-1.156-.488-1.803m-.606.042c-.162.96.428 2.126 1.55 3.264.457.487 1.003.945 1.594 1.358.383.281.767.517 1.283.754l.62-1.182 1.49 3.914-4.176 1.122.546-1.033c-3.099-1.36-3.969-2.526-4.412-3.235v-.015a5.144 5.144 0 0 1-.723-1.491l-.015-.074c.015-.65 1.092-2.156 1.904-3.013Zm16.035 1.483a1.259 1.259 0 0 1 .26.015l.14.023a5.05 5.05 0 0 1-.13 1.137v.015c-.1.383-.228.765-.377 1.148a9.526 9.526 0 0 0-1.346-1.776c.547-.357 1.051-.546 1.453-.562M18.43 5.8a8.903 8.903 0 0 1 2.506 6.2 8.937 8.937 0 0 1-.27 2.183 7.658 7.658 0 0 0-.488-.425A8.407 8.407 0 0 0 20.364 12 8.334 8.334 0 0 0 18 6.173a7.904 7.904 0 0 1 .429-.373M3.315 9.905c.157.148.319.29.488.425A8.417 8.417 0 0 0 3.636 12c0 2.248.887 4.286 2.327 5.788a8.11 8.11 0 0 1-.426.376A8.902 8.902 0 0 1 3.065 12a8.937 8.937 0 0 1 .25-2.095m13.988 1.541-.546 1.034c3.098 1.359 3.969 2.526 4.412 3.235v.014c.34.488.575.99.723 1.492l.014.074c-.014.65-1.092 2.156-1.903 3.013l-.34.354c.163-.96-.427-2.127-1.549-3.264a10.298 10.298 0 0 0-1.594-1.359 7.008 7.008 0 0 0-1.283-.753l-.605 1.152-1.505-3.87zm-6.006 1.684 1.121 4.18-1.033-.547c-1.357 3.102-2.523 3.973-3.231 4.416h-.015c-.487.34-.989.576-1.49.724l-.074.015c-.65-.015-2.154-1.093-3.01-1.906l-.354-.34c.959.163 2.124-.428 3.26-1.55.488-.458.945-1.004 1.358-1.595.28-.384.517-.768.753-1.285l-1.166-.635ZM3.72 16.663A9.526 9.526 0 0 0 5.086 18.5c-.697.47-1.33.665-1.777.59l-.138-.024c0-.367.038-.748.128-1.137v-.015c.11-.417.254-.835.42-1.252m14.131 1.314c.129.14.253.283.372.43A8.904 8.904 0 0 1 12 20.936a8.932 8.932 0 0 1-2.282-.296 7.757 7.757 0 0 0 .417-.487 8.335 8.335 0 0 0 7.716-2.175m.696.889c.43.666.607 1.267.534 1.698l-.023.138a5.034 5.034 0 0 1-1.136-.128h-.014a10.718 10.718 0 0 1-1.114-.366 9.526 9.526 0 0 0 1.753-1.342", "kofi": "M11.351 2.715c-2.7 0-4.986.025-6.83.26C2.078 3.285 0 5.154 0 8.61c0 3.506.182 6.13 1.585 8.493 1.584 2.701 4.233 4.182 7.662 4.182h.83c4.209 0 6.494-2.234 7.637-4a9.5 9.5 0 0 0 1.091-2.338C21.792 14.688 24 12.22 24 9.208v-.415c0-3.247-2.13-5.507-5.792-5.87-1.558-.156-2.65-.208-6.857-.208m0 1.947c4.208 0 5.09.052 6.571.182 2.624.311 4.13 1.584 4.13 4v.39c0 2.156-1.792 3.844-3.87 3.844h-.935l-.156.649c-.208 1.013-.597 1.818-1.039 2.546-.909 1.428-2.545 3.064-5.922 3.064h-.805c-2.571 0-4.831-.883-6.078-3.195-1.09-2-1.298-4.155-1.298-7.506 0-2.181.857-3.402 3.012-3.714 1.533-.233 3.559-.26 6.39-.26m6.547 2.287c-.416 0-.65.234-.65.546v2.935c0 .311.234.545.65.545 1.324 0 2.051-.754 2.051-2s-.727-2.026-2.052-2.026m-10.39.182c-1.818 0-3.013 1.48-3.013 3.142 0 1.533.858 2.857 1.949 3.897.727.701 1.87 1.429 2.649 1.896a1.47 1.47 0 0 0 1.507 0c.78-.467 1.922-1.195 2.623-1.896 1.117-1.039 1.974-2.364 1.974-3.897 0-1.662-1.247-3.142-3.039-3.142-1.065 0-1.792.545-2.338 1.298-.493-.753-1.246-1.298-2.312-1.298"};  // official brand marks (Simple Icons)
+  for (const [k, url] of Object.entries(SITE.links)) {
+    if (!url) continue;
+    const a = link("social " + k, null, url);
+    a.title = labels[k] || k; a.setAttribute("aria-label", a.title);
+    if (ICONS[k]) a.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[k]}"/></svg>`;
+    else a.textContent = a.title[0];
+    $("socials").append(a);
+  }
+
+  // ---------- games + their logos (set in the Mod Manager's Games tab) ----------
+  const LOGOS = SITE.gameLogos || {};
+  function gameLogo(name) {
+    if (name && LOGOS[name]) { const i = el("img", "glogo"); i.src = LOGOS[name]; i.alt = ""; i.loading = "lazy"; return i; }
+    return el("span", "glogo", name ? name.split(/[\s:\-]+/).filter(Boolean).map(w => w[0]).join("").slice(0, 2).toUpperCase() : "★");
+  }
+  const gameRow = name => { const r = el("div", "game game-row"); r.append(gameLogo(name), el("span", null, name)); return r; };
+
+  const counts = {};
+  MODS.forEach(m => counts[m.game] = (counts[m.game] || 0) + 1);
+  const games = Object.keys(counts).sort((a, b) => a.localeCompare(b));
+  for (const [n, l] of [[MODS.length, "Mods"], [MODS.filter(isFree).length, "Free"], [games.length, "Games"]]) {
+    const d = el("div"); d.append(el("b", null, n), el("small", null, l)); $("stats").append(d);
+  }
+
+  let game = "";
+  const closeGames = () => { $("glist").hidden = true; $("gbtn").setAttribute("aria-expanded", false); };
+  const setGameBtn = () => $("gbtn").replaceChildren(gameLogo(game), el("span", null, game || "All games"));
+  $("glist").append(...["", ...games].map(g => {
+    const b = el("button"); b.type = "button"; b.setAttribute("role", "option"); b.dataset.g = g;
+    b.append(gameLogo(g), el("span", null, g || "All games"), el("small", null, g ? counts[g] : MODS.length));
+    b.onclick = () => { game = g; setGameBtn(); closeGames(); filtersChanged(); };
+    return b;
+  }));
+  $("gbtn").onclick = () => {
+    const open = $("glist").hidden;
+    $("glist").hidden = !open; $("gbtn").setAttribute("aria-expanded", open);
+    $$("#glist button").forEach(b => b.setAttribute("aria-selected", b.dataset.g === game));
+    if (open) (document.querySelector("#glist [aria-selected=true]") || $("glist").firstChild).scrollIntoView({ block: "nearest" });
+  };
+  addEventListener("click", e => { if (!e.target.closest("#gpick")) closeGames(); });
+  addEventListener("keydown", e => { if (e.key === "Escape") closeGames(); });
+  setGameBtn();
+
+  // ---------- fullscreen viewer ----------
+  let lbList = [], lbI = 0;
+  const lbShow = () => { $("lbImg").src = lbList[lbI]; $("lbCount").textContent = `${lbI + 1} / ${lbList.length}`; };
+  const lbStep = d => { lbI = (lbI + d + lbList.length) % lbList.length; lbShow(); };
+  function openViewer(list, i) {
+    lbList = list; lbI = i; lbShow();
+    $("lb").classList.toggle("single", list.length < 2);
+    $("lb").hidden = false; document.body.style.overflow = "hidden"; $("lbClose").focus();
+  }
+  const closeViewer = () => { $("lb").hidden = true; document.body.style.overflow = ""; };
+  $("lbClose").onclick = closeViewer;
+  $("lbPrev").onclick = () => lbStep(-1);
+  $("lbNext").onclick = () => lbStep(1);
+  $("lb").onclick = e => { if (e.target === $("lb")) closeViewer(); };
+  addEventListener("keydown", e => {
+    if ($("lb").hidden) return;
+    if (e.key === "Escape") closeViewer();
+    if (e.key === "ArrowLeft") lbStep(-1);
+    if (e.key === "ArrowRight") lbStep(1);
+  });
+
+  // ---------- home carousel: every image in the slideshow/ folder (until it has some, the newest mod covers) ----------
+  (function carousel() {
+    let imgs = typeof SLIDESHOW !== "undefined" ? SLIDESHOW.slice() : [];
+    if (!imgs.length) imgs = MODS.slice().sort((a, b) => String(b.updated).localeCompare(String(a.updated)))
+                                 .map(m => pics(m)[0]).filter(Boolean).slice(0, 10);
+    const box = $("slides"), n = imgs.length;
+    if (!n) return box.remove();
+    const url = src => `url("${encodeURI(src)}")`;
+    let i = 0, timer;
+    const glow = el("div", "glow");
+    const els = imgs.map((src, k) => {
+      const s = el("button", "slide"); s.type = "button"; s.setAttribute("aria-label", `Slide ${k + 1} of ${n}`);
+      s.onclick = () => { if (k === i) openViewer(imgs, k); else { show(k); play(); } };  // center opens full size, sides slide in
+      return s;
+    });
+    const dots = el("div", "dots");
+    const dotEls = imgs.map((_, k) => { const d = el("button"); d.setAttribute("aria-label", "Go to slide " + (k + 1)); d.onclick = () => { show(k); play(); }; return d; });
+    dots.append(...dotEls);
+    const paint = k => { if (!els[k].dataset.p) { els[k].style.backgroundImage = url(imgs[k]); els[k].dataset.p = 1; } };  // load only what's near
+    function show(t) {
+      i = (t + n) % n;
+      els.forEach((s, k) => { const off = (k - i + n) % n; s.className = "slide " + (off === 0 ? "center" : off === 1 ? "next" : off === n - 1 ? "prev" : "away"); });
+      [i, (i + 1) % n, (i - 1 + n) % n, (i + 2) % n].forEach(paint);
+      glow.style.backgroundImage = url(imgs[i]);
+      dotEls.forEach((d, k) => d.setAttribute("aria-current", k === i));
+    }
+    const play = () => { clearInterval(timer); if (n > 1) timer = setInterval(() => show(i + 1), 3000); };  // pauses on hover
+    box.append(glow, ...els);
+    if (n > 1) box.append(navBtn("prev", "Previous slide", () => { show(i - 1); play(); }), navBtn("next", "Next slide", () => { show(i + 1); play(); }), dots);
+    box.onmouseenter = () => clearInterval(timer);
+    box.onmouseleave = play;
+    show(0); play();
+  })();
+
+  // ---------- mod list ----------
+  const PER_PAGE = 25;
+  let price = "all", page = 1;
+  // any filter change: back to page 1, leave a mod page if we're on one, and bring the list into view
+  function filtersChanged() {
+    page = 1;
+    if (location.hash.startsWith("#/") || location.hash === "#request") location.hash = "";
+    if (window.START_MOD || window.START_VIEW) {  // leave a mod's / the request page's own address
+      window.START_MOD = window.START_VIEW = null; history.replaceState(null, "", "./"); route();
+    }
+    render();
+    const top = $("listTop").getBoundingClientRect().top;
+    if (top > innerHeight * .6 || top < 0) $("listTop").scrollIntoView({ behavior: "smooth" });
+  }
+  $$(".seg button").forEach(b => b.onclick = () => {
+    price = b.dataset.p;
+    $$(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    filtersChanged();
+  });
+  $("q").oninput = filtersChanged;
+
+  function card(m) {
+    const c = el("article", "card");
+    c.onclick = e => { if (!e.target.closest("a")) location.hash = "#/" + slug(m); };
+    const t = thumb(m, pics(m)[0]);
+    t.append(el("span", "badge " + (isFree(m) ? "free" : "paid"), isFree(m) ? "Free" : "Premium"));  // prices stay on Patreon
+    const b = el("div", "body");
+    const tags = el("div", "tags"); (m.tags || []).forEach(x => tags.append(el("span", null, x)));
+    const meta = [m.version && "v" + m.version, m.updated && "Updated " + m.updated].filter(Boolean).join(" · ");
+    const actions = el("div", "actions");
+    actions.append(link("btn primary", "Download", m.link));  // the mod page says "Get on Patreon" for premium ones
+    if (m.video) actions.append(link("btn", "Watch", m.video));
+    // a real link to the mod's own page, so search engines can find every mod; clicks stay inside the app
+    const h = el("h3"), a = el("a", null, m.title);
+    a.href = "mods/" + slug(m) + "/";
+    a.onclick = e => { e.preventDefault(); location.hash = "#/" + slug(m); };
+    h.append(a);
+    b.append(gameRow(m.game), h, el("p", null, m.description), tags, el("div", "meta", meta), actions);
+    c.append(t, b);
+    return c;
+  }
+
+  function render() {
+    const q = $("q").value.trim().toLowerCase();
+    const list = MODS
+      .filter(m => !game || m.game === game)
+      .filter(m => price === "all" || (price === "free") === isFree(m))
+      .filter(m => !q || [m.title, m.game, m.description, ...(m.tags || [])].join(" ").toLowerCase().includes(q))
+      .sort((a, b) => String(b.updated).localeCompare(String(a.updated)));
+    const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+    page = Math.min(page, pages);
+    const from = (page - 1) * PER_PAGE, shown = list.slice(from, from + PER_PAGE);
+    $("grid").replaceChildren(...(shown.length ? shown.map(card) : [el("div", "empty", "No mods match that filter.")]));
+    $("resultInfo").textContent = list.length ? `Showing ${from + 1}–${from + shown.length} of ${list.length}` : "";
+    renderPager(pages);
+  }
+
+  function renderPager(pages) {
+    const p = $("pager");
+    p.replaceChildren();
+    if (pages < 2) return;
+    const go = n => { page = n; render(); $("listTop").scrollIntoView({ behavior: "smooth" }); };
+    const b = (text, n, label) => {
+      const x = el("button", n === page && !label ? "on" : null, text); x.type = "button";
+      if (label) { x.setAttribute("aria-label", label); x.disabled = n < 1 || n > pages; }
+      if (n === page && !label) x.setAttribute("aria-current", "page"); else x.onclick = () => go(n);
+      return x;
+    };
+    p.append(b("‹ Prev", page - 1, "Previous page"));
+    for (let n = 1; n <= pages; n++) {
+      if (n === 1 || n === pages || Math.abs(n - page) <= 2) p.append(b(n, n));
+      else if (!p.lastChild.classList.contains("gap")) p.append(el("span", "gap", "…"));
+    }
+    p.append(b("Next ›", page + 1, "Next page"));
+  }
+
+  // ---------- mod page ----------
+  function showMod(m) {
+    const v = $("modView");
+    const back = el("a", "back", "← All mods"); back.href = "#";
+
+    // big image + thumbnail slider; click the big image for fullscreen
+    const list = pics(m);
+    let cur = 0;
+    const shot = el("div", "shot"), main = thumb(m, list[0], true);
+    shot.append(main);
+    const left = el("div"); left.append(shot);
+    if (list.length) { main.classList.add("zoom"); main.title = "Click to view full size"; main.onclick = () => openViewer(list, cur); }
+    if (list.length > 1) {
+      const strip = el("div", "strip");
+      const count = el("div", "count");
+      const select = n => {
+        cur = (n + list.length) % list.length;
+        lazy.unobserve(main); main.style.background = bg(m, list[cur]);
+        count.textContent = `${cur + 1} / ${list.length}`;
+        [...strip.children].forEach((b, k) => b.setAttribute("aria-current", k === cur));
+        strip.children[cur].scrollIntoView({ block: "nearest", inline: "nearest" });
+      };
+      list.forEach((p, k) => {
+        const b = el("button"); b.style.background = bg(m, p);
+        b.setAttribute("aria-label", "Screenshot " + (k + 1)); b.onclick = () => select(k);
+        strip.append(b);
+      });
+      shot.append(navBtn("prev", "Previous screenshot", () => select(cur - 1)), navBtn("next", "Next screenshot", () => select(cur + 1)), count);
+      const slider = el("div", "slider");
+      slider.append(strip,
+        navBtn("prev", "Scroll thumbnails left", () => strip.scrollBy({ left: -strip.clientWidth * .8 })),
+        navBtn("next", "Scroll thumbnails right", () => strip.scrollBy({ left: strip.clientWidth * .8 })));
+      left.append(slider);
+      count.textContent = `1 / ${list.length}`;
+      strip.children[0].setAttribute("aria-current", true);
+    }
+
+    // buy/download panel
+    const side = el("aside", "side");
+    const dl = el("dl");
+    for (const [k, val] of [["Game", m.game], ["Version", m.version], ["Updated", m.updated], ["Size", m.size], ["Requires", m.requires]])
+      if (val) dl.append(el("dt", null, k), el("dd", null, val));
+    const tags = el("div", "tags"); (m.tags || []).forEach(x => tags.append(el("span", null, x)));
+    side.append(gameRow(m.game), el("h1", null, m.title),
+      el("div", "price " + (isFree(m) ? "free" : "paid"), isFree(m) ? "FREE" : "PREMIUM"), dl, tags,
+      link("btn primary", isFree(m) ? "Download" : "Get on Patreon", m.link));
+    if (m.video) side.append(link("btn", "Watch showcase", m.video));
+    if (SITE.url) {  // the shareable address of this mod's own page (shows a preview card on Discord, YouTube, X…)
+      const share = el("button", "btn", "🔗 Copy link"); share.type = "button";
+      share.onclick = async () => {
+        try { await navigator.clipboard.writeText(SITE.url.replace(/\/?$/, "/") + "mods/" + slug(m) + "/"); share.textContent = "Copied ✓"; }
+        catch { share.textContent = "Couldn't copy"; }
+        setTimeout(() => share.textContent = "🔗 Copy link", 2000);
+      };
+      side.append(share);
+    }
+
+    const top = el("div", "detail"); top.append(left, side);
+
+    const sec = el("div", "sections");
+    sec.append(el("h2", null, "About"), m.detailsFormat === "bbcode" ? bbcode(m.details || m.description) : el("p", null, m.details || m.description));
+    if (m.features?.length) { const ul = el("ul"); m.features.forEach(f => ul.append(el("li", null, f))); sec.append(el("h2", null, "Features"), ul); }
+    if (m.install?.length) { const ol = el("ol"); m.install.forEach(f => ol.append(el("li", null, f))); sec.append(el("h2", null, "Installation"), ol); }
+    const yt = (m.video || "").match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+    if (yt) { const f = el("iframe", "video"); f.src = "https://www.youtube.com/embed/" + yt[1]; f.title = m.title + " video"; f.allowFullscreen = true;
+              sec.append(el("h2", null, "Video"), f); }
+
+    v.replaceChildren(back, top, sec);
+  }
+
+  function route() {
+    // "#/slug" inside the app, or a mod's own page (mods/<slug>/, made at export) which sets START_MOD
+    const req = location.hash === "#request" || (!location.hash && window.START_VIEW === "request");
+    const m = !req && (MODS.find(x => "#/" + slug(x) === location.hash)
+      || (!location.hash && window.START_MOD && MODS.find(x => slug(x) === window.START_MOD)));
+    closeViewer();
+    $("listView").hidden = !!m || req; $("modView").hidden = !m; $("reqView").hidden = !req;
+    document.title = req ? `Request a Mod · ${SITE.name}` : m ? `${m.title} · ${SITE.name}` : SITE.name;
+    if (m) showMod(m);
+    scrollTo(0, 0);
+  }
+  addEventListener("hashchange", route);
+
+  // request page: Discord buttons + copy the request template
+  $$("[data-discord]").forEach(a => { if (SITE.links?.discord) a.href = SITE.links.discord; else a.hidden = true; });
+  $("copyTpl").onclick = async () => {
+    try { await navigator.clipboard.writeText($("tpl").textContent); $("copyTpl").textContent = "Copied ✓"; }
+    catch { $("copyTpl").textContent = "Select & copy it"; }
+    setTimeout(() => $("copyTpl").textContent = "📋 Copy", 2000);
+  };
+  render();
+  route();
+</script>
+</body>
+</html>
