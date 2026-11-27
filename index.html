@@ -3,7 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mods</title>
+<!--seo--><title>Gamer JP Mods</title>
+<meta name="description" content="Free and premium PC game mods by Gamer JP: character swaps, outfits and weapons for God of War Ragnarok, Black Myth: Wukong, Stellar Blade, Resident Evil, Demon Slayer and more.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gamer JP Mods">
+<meta property="og:title" content="Gamer JP Mods">
+<meta property="og:description" content="Free and premium PC game mods by Gamer JP: character swaps, outfits and weapons for God of War Ragnarok, Black Myth: Wukong, Stellar Blade, Resident Evil, Demon Slayer and more.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://jpthebaby.github.io/gamerjpmods/">
+<meta property="og:url" content="https://jpthebaby.github.io/gamerjpmods/">
+<meta property="og:image" content="https://jpthebaby.github.io/gamerjpmods/screenshots/cj-replace-nathan-drake/pasted-20261127053733.jpg">
+<meta name="twitter:image" content="https://jpthebaby.github.io/gamerjpmods/screenshots/cj-replace-nathan-drake/pasted-20261127053733.jpg"><!--/seo-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -124,6 +134,7 @@
   .body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
   .game { color: var(--accent); font: 700 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
   .card h3 { margin: 0; font: 700 22px/1.1 Rajdhani, sans-serif; }
+  .card h3 a { color: inherit; text-decoration: none; }
   .card p { margin: 0; color: var(--muted); font-size: 14px; }
   .tags { display: flex; gap: 6px; flex-wrap: wrap; }
   .tags span { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: #1d2230; color: var(--muted); }
@@ -133,6 +144,35 @@
   .empty { color: var(--muted); text-align: center; padding: 60px 0; grid-column: 1 / -1; }
 
   /* mod page */
+  /* request page */
+  .reqbtn { height: 42px; flex: none; }
+  .req { max-width: 980px; padding-bottom: 70px; }
+  .req h2 { font: 700 26px Rajdhani, sans-serif; text-transform: uppercase; letter-spacing: .04em; margin: 44px 0 16px;
+            border-left: 3px solid var(--accent); padding-left: 10px; }
+  .req-hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; padding: 44px 34px; text-align: center;
+              background: radial-gradient(600px 240px at 20% 0%, rgba(255,77,46,.22), transparent 70%),
+                          radial-gradient(500px 220px at 90% 100%, rgba(88,101,242,.22), transparent 70%), var(--panel); }
+  .req-hero .eyebrow { color: var(--accent2); font: 700 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .14em; }
+  .req-hero h1 { font: 700 clamp(38px, 6vw, 60px)/1 Rajdhani, sans-serif; text-transform: uppercase; margin: 10px 0 12px; }
+  .req-hero p { color: #c3c9d6; font-size: 17px; max-width: 560px; margin: 0 auto 24px; }
+  .btn.big { padding: 14px 26px; font-size: 16px; border-radius: 10px; }
+  .req-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .req-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; transition: border-color .2s, transform .2s; }
+  .req-card:hover { border-color: #3a4256; transform: translateY(-2px); }
+  .req-card .ico { font-size: 26px; display: block; margin-bottom: 8px; }
+  .req-card b { font: 700 19px Rajdhani, sans-serif; }
+  .req-card p { color: var(--muted); margin: 6px 0 0; font-size: 14px; }
+  .req-steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .req-steps li { counter-increment: s; display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; align-items: center;
+                  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .req-steps li::before { content: counter(s); grid-row: span 2; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+                          background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #111; font: 700 18px Rajdhani, sans-serif; }
+  .req-steps span { color: var(--muted); font-size: 14px; }
+  .req-template { margin-top: 16px; border: 1px dashed #3a4256; border-radius: 12px; overflow: hidden; }
+  .tpl-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; background: var(--panel); }
+  .req-template pre { margin: 0; padding: 16px; font: 14px/1.7 Consolas, monospace; color: #c3c9d6; white-space: pre-wrap; background: #0e1118; }
+  .req-cta { margin-top: 40px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+             font: 700 24px Rajdhani, sans-serif; text-transform: uppercase; }
   .back { display: inline-block; margin: 24px 0 18px; color: var(--muted); text-decoration: none; font-weight: 600; }
   .back:hover { color: var(--accent); }
   .detail { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; align-items: start; }
@@ -183,7 +223,8 @@
                               .social { width: 36px; height: 36px; } .social svg { width: 18px; height: 18px; } .logo { font-size: 18px; }
                               .nav { width: 36px; height: 36px; font-size: 20px; } }
   @media (max-width: 700px) { header { position: static; } }  /* two-row header is too tall to pin on phones */
-  @media (max-width: 400px) { .tools { flex-wrap: wrap; } .tools input { order: 3; flex-basis: 100%; } .gbtn { flex: 1; width: auto; } }
+  @media (max-width: 400px) { .tools { flex-wrap: wrap; } .tools input { order: 3; flex: 1 1 150px; } .reqbtn { order: 4; padding: 0 12px; }
+                              .gbtn { flex: 1; width: auto; } }
 </style>
 </head>
 <body>
@@ -201,6 +242,7 @@
         <button data-p="free" aria-pressed="false">Free</button>
         <button data-p="paid" aria-pressed="false">Premium</button>
       </div>
+      <a class="btn primary reqbtn" href="#request">✉ Request Mods</a>
     </div>
     <nav class="socials" id="socials" aria-label="Social links"></nav>
   </div>
@@ -219,6 +261,55 @@
 </div>
 
 <main class="wrap" id="modView" hidden></main>
+
+<main class="wrap req" id="reqView" hidden>
+  <a class="back" href="#">← All mods</a>
+  <section class="req-hero">
+    <span class="eyebrow">Custom mods</span>
+    <h1>Request a Mod</h1>
+    <p>Want your favourite character, outfit or weapon in a game? Send your request on Discord and I'll make it for you.</p>
+    <a class="btn primary big" data-discord href="#" target="_blank" rel="noopener">💬 Request on Discord</a>
+  </section>
+
+  <h2>What can you request?</h2>
+  <div class="req-grid">
+    <div class="req-card"><span class="ico">🧍</span><b>Character swap</b><p>Play as any character by replacing one in the game, e.g. <em>Goku replacing Kratos</em>.</p></div>
+    <div class="req-card"><span class="ico">👕</span><b>Outfit</b><p>A new outfit or skin for a character you play.</p></div>
+    <div class="req-card"><span class="ico">⚔️</span><b>Weapon</b><p>Swap a weapon for one from another game, movie or anime.</p></div>
+    <div class="req-card"><span class="ico">🎨</span><b>Texture</b><p>New colours, materials or higher-quality textures.</p></div>
+  </div>
+
+  <h2>What to send on Discord</h2>
+  <ol class="req-steps">
+    <li><b>Game title</b><span>The exact game name, e.g. <em>God of War Ragnarok</em>.</span></li>
+    <li><b>Type of mod</b><span>Character swap, outfit, weapon or texture.</span></li>
+    <li><b>The character or item you want</b><span>e.g. <em>Sung Jinwoo</em> or <em>Mjölnir</em>.</span></li>
+    <li><b>What it should replace</b><span>The character, outfit or weapon in the game, e.g. <em>replace Kratos</em> or <em>replace the Leviathan Axe</em>.</span></li>
+    <li><b>Reference pictures or links</b><span>Screenshots, artwork or a video showing the look you want.</span></li>
+  </ol>
+
+  <div class="req-template">
+    <div class="tpl-head"><b>Copy this, fill it in and paste it on Discord</b><button type="button" class="btn" id="copyTpl">📋 Copy</button></div>
+    <pre id="tpl">Game title:
+Mod type: Character swap / Outfit / Weapon / Texture
+I want (character or item):
+It should replace:
+Reference pictures / links:
+Extra notes:</pre>
+  </div>
+
+  <h2>Good to know</h2>
+  <div class="req-grid">
+    <div class="req-card"><span class="ico">⏳</span><b>Done by priority</b><p>Requests are made in priority order. Bigger mods take longer, so you'll get an expected time when your request is confirmed.</p></div>
+    <div class="req-card"><span class="ico">💰</span><b>Price after confirmation</b><p>Every mod is different, so the price is finalised once your request is reviewed and confirmed. Nothing to pay before that.</p></div>
+    <div class="req-card"><span class="ico">✅</span><b>Not everything is possible</b><p>Some games or models can't be modded. If yours can't be done, you'll be told before anything is agreed.</p></div>
+  </div>
+
+  <div class="req-cta">
+    <b>Ready?</b>
+    <a class="btn primary big" data-discord href="#" target="_blank" rel="noopener">💬 Request on Discord</a>
+  </div>
+</main>
 
 <div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
   <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
@@ -255,9 +346,10 @@
     if (e.isIntersecting) { e.target.style.background = e.target.dataset.bg; lazy.unobserve(e.target); }
   }), { rootMargin: "400px" });
 
-  function thumb(m, src) {
+  function thumb(m, src, eager) {
     const t = el("div", "thumb" + (src ? "" : " ph"), src ? null : m.game);
-    if (src) { t.style.background = "#05060a"; t.dataset.bg = bg(m, src); lazy.observe(t); }
+    if (src && eager) t.style.background = bg(m, src);  // already on screen: load now
+    else if (src) { t.style.background = "#05060a"; t.dataset.bg = bg(m, src); lazy.observe(t); }
     else t.style.background = bg(m);
     return t;
   }
@@ -405,7 +497,10 @@
   // any filter change: back to page 1, leave a mod page if we're on one, and bring the list into view
   function filtersChanged() {
     page = 1;
-    if (location.hash.startsWith("#/")) location.hash = "";
+    if (location.hash.startsWith("#/") || location.hash === "#request") location.hash = "";
+    if (window.START_MOD || window.START_VIEW) {  // leave a mod's / the request page's own address
+      window.START_MOD = window.START_VIEW = null; history.replaceState(null, "", "./"); route();
+    }
     render();
     const top = $("listTop").getBoundingClientRect().top;
     if (top > innerHeight * .6 || top < 0) $("listTop").scrollIntoView({ behavior: "smooth" });
@@ -428,7 +523,12 @@
     const actions = el("div", "actions");
     actions.append(link("btn primary", "Download", m.link));  // the mod page says "Get on Patreon" for premium ones
     if (m.video) actions.append(link("btn", "Watch", m.video));
-    b.append(gameRow(m.game), el("h3", null, m.title), el("p", null, m.description), tags, el("div", "meta", meta), actions);
+    // a real link to the mod's own page, so search engines can find every mod; clicks stay inside the app
+    const h = el("h3"), a = el("a", null, m.title);
+    a.href = "mods/" + slug(m) + "/";
+    a.onclick = e => { e.preventDefault(); location.hash = "#/" + slug(m); };
+    h.append(a);
+    b.append(gameRow(m.game), h, el("p", null, m.description), tags, el("div", "meta", meta), actions);
     c.append(t, b);
     return c;
   }
@@ -475,7 +575,7 @@
     // big image + thumbnail slider; click the big image for fullscreen
     const list = pics(m);
     let cur = 0;
-    const shot = el("div", "shot"), main = thumb(m, list[0]);
+    const shot = el("div", "shot"), main = thumb(m, list[0], true);
     shot.append(main);
     const left = el("div"); left.append(shot);
     if (list.length) { main.classList.add("zoom"); main.title = "Click to view full size"; main.onclick = () => openViewer(list, cur); }
@@ -514,6 +614,15 @@
       el("div", "price " + (isFree(m) ? "free" : "paid"), isFree(m) ? "FREE" : "PREMIUM"), dl, tags,
       link("btn primary", isFree(m) ? "Download" : "Get on Patreon", m.link));
     if (m.video) side.append(link("btn", "Watch showcase", m.video));
+    if (SITE.url) {  // the shareable address of this mod's own page (shows a preview card on Discord, YouTube, X…)
+      const share = el("button", "btn", "🔗 Copy link"); share.type = "button";
+      share.onclick = async () => {
+        try { await navigator.clipboard.writeText(SITE.url.replace(/\/?$/, "/") + "mods/" + slug(m) + "/"); share.textContent = "Copied ✓"; }
+        catch { share.textContent = "Couldn't copy"; }
+        setTimeout(() => share.textContent = "🔗 Copy link", 2000);
+      };
+      side.append(share);
+    }
 
     const top = el("div", "detail"); top.append(left, side);
 
@@ -529,14 +638,25 @@
   }
 
   function route() {
-    const m = MODS.find(x => "#/" + slug(x) === location.hash);
+    // "#/slug" inside the app, or a mod's own page (mods/<slug>/, made at export) which sets START_MOD
+    const req = location.hash === "#request" || (!location.hash && window.START_VIEW === "request");
+    const m = !req && (MODS.find(x => "#/" + slug(x) === location.hash)
+      || (!location.hash && window.START_MOD && MODS.find(x => slug(x) === window.START_MOD)));
     closeViewer();
-    $("listView").hidden = !!m; $("modView").hidden = !m;
-    document.title = m ? `${m.title} · ${SITE.name}` : SITE.name;
+    $("listView").hidden = !!m || req; $("modView").hidden = !m; $("reqView").hidden = !req;
+    document.title = req ? `Request a Mod · ${SITE.name}` : m ? `${m.title} · ${SITE.name}` : SITE.name;
     if (m) showMod(m);
     scrollTo(0, 0);
   }
   addEventListener("hashchange", route);
+
+  // request page: Discord buttons + copy the request template
+  $$("[data-discord]").forEach(a => { if (SITE.links?.discord) a.href = SITE.links.discord; else a.hidden = true; });
+  $("copyTpl").onclick = async () => {
+    try { await navigator.clipboard.writeText($("tpl").textContent); $("copyTpl").textContent = "Copied ✓"; }
+    catch { $("copyTpl").textContent = "Select & copy it"; }
+    setTimeout(() => $("copyTpl").textContent = "📋 Copy", 2000);
+  };
   render();
   route();
 </script>

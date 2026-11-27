@@ -9,7 +9,9 @@ const SITE = {
     "kofi": "",
     "nexus": "https://www.nexusmods.com/profile/JPTHEHERO"
   },
-  "gameLogos": {}
+  "gameLogos": {},
+  "url": "https://jpthebaby.github.io/gamerjpmods/",
+  "description": "Free and premium PC game mods by Gamer JP: character swaps, outfits and weapons for God of War Ragnarok, Black Myth: Wukong, Stellar Blade, Resident Evil, Demon Slayer and more."
 };
 const MODS = [
   {
